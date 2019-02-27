@@ -1,2 +1,2 @@
-# Vending_Machine_FBGA
-Vending Machine simulator using an FBGA motherboard called Altera Cyclone IV
+# Vending_Machine_FPGA
+Vending Machine simulator using an FPGA motherboard called Altera Cyclone IV
