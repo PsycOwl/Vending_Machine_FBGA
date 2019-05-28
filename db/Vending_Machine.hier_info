@@ -1,0 +1,835 @@
+|Vending_Machine
+HEX2[6] <= BIN2SEG:fark.ONES[6]
+HEX2[5] <= BIN2SEG:fark.ONES[5]
+HEX2[4] <= BIN2SEG:fark.ONES[4]
+HEX2[3] <= BIN2SEG:fark.ONES[3]
+HEX2[2] <= BIN2SEG:fark.ONES[2]
+HEX2[1] <= BIN2SEG:fark.ONES[1]
+HEX2[0] <= BIN2SEG:fark.ONES[0]
+SW[0] => FourBitComparator:inst15.B0
+SW[0] => FullSubstractorAdapter:inst11.A0
+SW[0] => inst27.IN0
+SW[0] => BIN2SEG:para.S0
+SW[1] => FourBitComparator:inst15.B1
+SW[1] => FullSubstractorAdapter:inst11.A1
+SW[1] => inst27.IN3
+SW[1] => BIN2SEG:para.S1
+SW[2] => FourBitComparator:inst15.B2
+SW[2] => FullSubstractorAdapter:inst11.A2
+SW[2] => inst27.IN1
+SW[2] => BIN2SEG:para.S2
+SW[3] => FourBitComparator:inst15.B3
+SW[3] => FullSubstractorAdapter:inst11.A3
+SW[3] => inst27.IN2
+SW[3] => BIN2SEG:para.S3
+SW[4] => inst16.IN2
+SW[4] => FullSubstractorAdapter:inst11.A4
+SW[4] => inst28.IN0
+SW[4] => BIN2SEG:para.S4
+SW[5] => MUX41:inst1.select0
+SW[5] => MUX41:inst3.select0
+SW[5] => MUX41:inst5.select0
+SW[5] => MUX41:inst4.select0
+SW[5] => DEMUX41:inst.select0
+SW[6] => MUX41:inst1.select1
+SW[6] => MUX41:inst3.select1
+SW[6] => MUX41:inst5.select1
+SW[6] => MUX41:inst4.select1
+SW[6] => DEMUX41:inst.select1
+HEX3[6] <= BIN2SEG:fark.TENS[6]
+HEX3[5] <= BIN2SEG:fark.TENS[5]
+HEX3[4] <= BIN2SEG:fark.TENS[4]
+HEX3[3] <= BIN2SEG:fark.TENS[3]
+HEX3[2] <= BIN2SEG:fark.TENS[2]
+HEX3[1] <= BIN2SEG:fark.TENS[1]
+HEX3[0] <= BIN2SEG:fark.TENS[0]
+HEX4[6] <= BIN2SEG:para.ONES[6]
+HEX4[5] <= BIN2SEG:para.ONES[5]
+HEX4[4] <= BIN2SEG:para.ONES[4]
+HEX4[3] <= BIN2SEG:para.ONES[3]
+HEX4[2] <= BIN2SEG:para.ONES[2]
+HEX4[1] <= BIN2SEG:para.ONES[1]
+HEX4[0] <= BIN2SEG:para.ONES[0]
+HEX5[6] <= BIN2SEG:para.TENS[6]
+HEX5[5] <= BIN2SEG:para.TENS[5]
+HEX5[4] <= BIN2SEG:para.TENS[4]
+HEX5[3] <= BIN2SEG:para.TENS[3]
+HEX5[2] <= BIN2SEG:para.TENS[2]
+HEX5[1] <= BIN2SEG:para.TENS[1]
+HEX5[0] <= BIN2SEG:para.TENS[0]
+HEX6[6] <= BIN2SEG:fiyat.ONES[6]
+HEX6[5] <= BIN2SEG:fiyat.ONES[5]
+HEX6[4] <= BIN2SEG:fiyat.ONES[4]
+HEX6[3] <= BIN2SEG:fiyat.ONES[3]
+HEX6[2] <= BIN2SEG:fiyat.ONES[2]
+HEX6[1] <= BIN2SEG:fiyat.ONES[1]
+HEX6[0] <= BIN2SEG:fiyat.ONES[0]
+HEX7[6] <= BIN2SEG:fiyat.TENS[6]
+HEX7[5] <= BIN2SEG:fiyat.TENS[5]
+HEX7[4] <= BIN2SEG:fiyat.TENS[4]
+HEX7[3] <= BIN2SEG:fiyat.TENS[3]
+HEX7[2] <= BIN2SEG:fiyat.TENS[2]
+HEX7[1] <= BIN2SEG:fiyat.TENS[1]
+HEX7[0] <= BIN2SEG:fiyat.TENS[0]
+LEDG[0] <= inst19.DB_MAX_OUTPUT_PORT_TYPE
+LEDG[1] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+LEDG[2] <= inst21.DB_MAX_OUTPUT_PORT_TYPE
+LEDG[3] <= inst22.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[0] <= DEMUX41:inst.out0
+LEDR[1] <= DEMUX41:inst.out1
+LEDR[2] <= DEMUX41:inst.out2
+LEDR[3] <= DEMUX41:inst.out3
+
+
+|Vending_Machine|BIN2SEG:fark
+ONES[6] <= BCD2SEG:inst1.SSD[6]
+ONES[5] <= BCD2SEG:inst1.SSD[5]
+ONES[4] <= BCD2SEG:inst1.SSD[4]
+ONES[3] <= BCD2SEG:inst1.SSD[3]
+ONES[2] <= BCD2SEG:inst1.SSD[2]
+ONES[1] <= BCD2SEG:inst1.SSD[1]
+ONES[0] <= BCD2SEG:inst1.SSD[0]
+P => BCD2SEG:inst1.P
+P => BCD2SEG:inst2.P
+S0 => BIN2BCD:inst.A[0]
+S1 => BIN2BCD:inst.A[1]
+S2 => BIN2BCD:inst.A[2]
+S3 => BIN2BCD:inst.A[3]
+S4 => BIN2BCD:inst.A[4]
+S5 => BIN2BCD:inst.A[5]
+S6 => BIN2BCD:inst.A[6]
+S7 => BIN2BCD:inst.A[7]
+TENS[6] <= BCD2SEG:inst2.SSD[6]
+TENS[5] <= BCD2SEG:inst2.SSD[5]
+TENS[4] <= BCD2SEG:inst2.SSD[4]
+TENS[3] <= BCD2SEG:inst2.SSD[3]
+TENS[2] <= BCD2SEG:inst2.SSD[2]
+TENS[1] <= BCD2SEG:inst2.SSD[1]
+TENS[0] <= BCD2SEG:inst2.SSD[0]
+
+
+|Vending_Machine|BIN2SEG:fark|BCD2SEG:inst1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN0
+X[0] => SSD.IN0
+X[0] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[2] => SSD.IN0
+X[2] => SSD.IN0
+X[2] => SSD.IN0
+X[2] => SSD.IN1
+X[3] => SSD.IN1
+X[3] => SSD.IN1
+X[3] => SSD.IN1
+SSD[6] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[5] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[4] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[3] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[2] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[1] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[0] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:fark|BIN2BCD:inst
+A[0] => ONES[0].DATAIN
+A[1] => d5[0].IN1
+A[2] => d4[0].IN1
+A[3] => d3[0].IN1
+A[4] => d2[0].IN1
+A[5] => d1[0].IN1
+A[6] => d1[1].IN1
+A[7] => d1[2].IN1
+ONES[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
+ONES[1] <= add3:m5.port1
+ONES[2] <= add3:m5.port1
+ONES[3] <= add3:m5.port1
+TENS[0] <= add3:m5.port1
+TENS[1] <= add3:m7.port1
+TENS[2] <= add3:m7.port1
+TENS[3] <= add3:m7.port1
+HUNDREDS[0] <= add3:m7.port1
+HUNDREDS[1] <= add3:m6.port1
+
+
+|Vending_Machine|BIN2SEG:fark|BIN2BCD:inst|add3:m1
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:fark|BIN2BCD:inst|add3:m2
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:fark|BIN2BCD:inst|add3:m3
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:fark|BIN2BCD:inst|add3:m4
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:fark|BIN2BCD:inst|add3:m5
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:fark|BIN2BCD:inst|add3:m6
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:fark|BIN2BCD:inst|add3:m7
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:fark|BCD2SEG:inst2
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN0
+X[0] => SSD.IN0
+X[0] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[2] => SSD.IN0
+X[2] => SSD.IN0
+X[2] => SSD.IN0
+X[2] => SSD.IN1
+X[3] => SSD.IN1
+X[3] => SSD.IN1
+X[3] => SSD.IN1
+SSD[6] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[5] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[4] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[3] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[2] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[1] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[0] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|FourBitComparator:inst15
+B <= inst27.DB_MAX_OUTPUT_PORT_TYPE
+A3 => inst3.IN0
+A3 => inst1.IN0
+B3 => inst.IN1
+B3 => inst4.IN0
+A2 => inst6.IN0
+A2 => inst8.IN0
+B2 => inst9.IN0
+B2 => inst5.IN1
+A1 => inst13.IN0
+A1 => inst11.IN0
+B1 => inst10.IN1
+B1 => inst14.IN0
+A0 => inst18.IN0
+A0 => inst16.IN0
+B0 => inst15.IN1
+B0 => inst19.IN0
+AB <= inst26.DB_MAX_OUTPUT_PORT_TYPE
+A <= inst28.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|MUX41:inst1
+Out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+IN0 => and4.IN0
+select1 => inst6.IN0
+select1 => and2.IN1
+select1 => and1.IN1
+select0 => inst7.IN0
+select0 => and1.IN2
+select0 => and3.IN2
+IN2 => and2.IN0
+IN3 => and1.IN0
+IN1 => and3.IN0
+
+
+|Vending_Machine|MUX41:inst3
+Out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+IN0 => and4.IN0
+select1 => inst6.IN0
+select1 => and2.IN1
+select1 => and1.IN1
+select0 => inst7.IN0
+select0 => and1.IN2
+select0 => and3.IN2
+IN2 => and2.IN0
+IN3 => and1.IN0
+IN1 => and3.IN0
+
+
+|Vending_Machine|MUX41:inst5
+Out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+IN0 => and4.IN0
+select1 => inst6.IN0
+select1 => and2.IN1
+select1 => and1.IN1
+select0 => inst7.IN0
+select0 => and1.IN2
+select0 => and3.IN2
+IN2 => and2.IN0
+IN3 => and1.IN0
+IN1 => and3.IN0
+
+
+|Vending_Machine|MUX41:inst4
+Out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+IN0 => and4.IN0
+select1 => inst6.IN0
+select1 => and2.IN1
+select1 => and1.IN1
+select0 => inst7.IN0
+select0 => and1.IN2
+select0 => and3.IN2
+IN2 => and2.IN0
+IN3 => and1.IN0
+IN1 => and3.IN0
+
+
+|Vending_Machine|FullSubstractorAdapter:inst11
+SUM0 <= FullSubstractor:inst.SUM[0]
+A4 => FullSubstractor:inst.A[4]
+A3 => FullSubstractor:inst.A[3]
+A2 => FullSubstractor:inst.A[2]
+A1 => FullSubstractor:inst.A[1]
+A0 => FullSubstractor:inst.A[0]
+B4 => FullSubstractor:inst.B[4]
+B3 => FullSubstractor:inst.B[3]
+B2 => FullSubstractor:inst.B[2]
+B1 => FullSubstractor:inst.B[1]
+B0 => FullSubstractor:inst.B[0]
+SUM1 <= FullSubstractor:inst.SUM[1]
+SUM2 <= FullSubstractor:inst.SUM[2]
+SUM3 <= FullSubstractor:inst.SUM[3]
+SUM4 <= FullSubstractor:inst.SUM[4]
+
+
+|Vending_Machine|FullSubstractorAdapter:inst11|FullSubstractor:inst
+A[0] => Add0.IN10
+A[1] => Add0.IN9
+A[2] => Add0.IN8
+A[3] => Add0.IN7
+A[4] => Add0.IN6
+B[0] => Add0.IN5
+B[1] => Add0.IN4
+B[2] => Add0.IN3
+B[3] => Add0.IN2
+B[4] => Add0.IN1
+SUM[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+SUM[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+SUM[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+SUM[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+SUM[4] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:para
+ONES[6] <= BCD2SEG:inst1.SSD[6]
+ONES[5] <= BCD2SEG:inst1.SSD[5]
+ONES[4] <= BCD2SEG:inst1.SSD[4]
+ONES[3] <= BCD2SEG:inst1.SSD[3]
+ONES[2] <= BCD2SEG:inst1.SSD[2]
+ONES[1] <= BCD2SEG:inst1.SSD[1]
+ONES[0] <= BCD2SEG:inst1.SSD[0]
+P => BCD2SEG:inst1.P
+P => BCD2SEG:inst2.P
+S0 => BIN2BCD:inst.A[0]
+S1 => BIN2BCD:inst.A[1]
+S2 => BIN2BCD:inst.A[2]
+S3 => BIN2BCD:inst.A[3]
+S4 => BIN2BCD:inst.A[4]
+S5 => BIN2BCD:inst.A[5]
+S6 => BIN2BCD:inst.A[6]
+S7 => BIN2BCD:inst.A[7]
+TENS[6] <= BCD2SEG:inst2.SSD[6]
+TENS[5] <= BCD2SEG:inst2.SSD[5]
+TENS[4] <= BCD2SEG:inst2.SSD[4]
+TENS[3] <= BCD2SEG:inst2.SSD[3]
+TENS[2] <= BCD2SEG:inst2.SSD[2]
+TENS[1] <= BCD2SEG:inst2.SSD[1]
+TENS[0] <= BCD2SEG:inst2.SSD[0]
+
+
+|Vending_Machine|BIN2SEG:para|BCD2SEG:inst1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN0
+X[0] => SSD.IN0
+X[0] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[2] => SSD.IN0
+X[2] => SSD.IN0
+X[2] => SSD.IN0
+X[2] => SSD.IN1
+X[3] => SSD.IN1
+X[3] => SSD.IN1
+X[3] => SSD.IN1
+SSD[6] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[5] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[4] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[3] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[2] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[1] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[0] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:para|BIN2BCD:inst
+A[0] => ONES[0].DATAIN
+A[1] => d5[0].IN1
+A[2] => d4[0].IN1
+A[3] => d3[0].IN1
+A[4] => d2[0].IN1
+A[5] => d1[0].IN1
+A[6] => d1[1].IN1
+A[7] => d1[2].IN1
+ONES[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
+ONES[1] <= add3:m5.port1
+ONES[2] <= add3:m5.port1
+ONES[3] <= add3:m5.port1
+TENS[0] <= add3:m5.port1
+TENS[1] <= add3:m7.port1
+TENS[2] <= add3:m7.port1
+TENS[3] <= add3:m7.port1
+HUNDREDS[0] <= add3:m7.port1
+HUNDREDS[1] <= add3:m6.port1
+
+
+|Vending_Machine|BIN2SEG:para|BIN2BCD:inst|add3:m1
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:para|BIN2BCD:inst|add3:m2
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:para|BIN2BCD:inst|add3:m3
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:para|BIN2BCD:inst|add3:m4
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:para|BIN2BCD:inst|add3:m5
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:para|BIN2BCD:inst|add3:m6
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:para|BIN2BCD:inst|add3:m7
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:para|BCD2SEG:inst2
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN0
+X[0] => SSD.IN0
+X[0] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[2] => SSD.IN0
+X[2] => SSD.IN0
+X[2] => SSD.IN0
+X[2] => SSD.IN1
+X[3] => SSD.IN1
+X[3] => SSD.IN1
+X[3] => SSD.IN1
+SSD[6] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[5] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[4] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[3] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[2] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[1] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[0] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:fiyat
+ONES[6] <= BCD2SEG:inst1.SSD[6]
+ONES[5] <= BCD2SEG:inst1.SSD[5]
+ONES[4] <= BCD2SEG:inst1.SSD[4]
+ONES[3] <= BCD2SEG:inst1.SSD[3]
+ONES[2] <= BCD2SEG:inst1.SSD[2]
+ONES[1] <= BCD2SEG:inst1.SSD[1]
+ONES[0] <= BCD2SEG:inst1.SSD[0]
+P => BCD2SEG:inst1.P
+P => BCD2SEG:inst2.P
+S0 => BIN2BCD:inst.A[0]
+S1 => BIN2BCD:inst.A[1]
+S2 => BIN2BCD:inst.A[2]
+S3 => BIN2BCD:inst.A[3]
+S4 => BIN2BCD:inst.A[4]
+S5 => BIN2BCD:inst.A[5]
+S6 => BIN2BCD:inst.A[6]
+S7 => BIN2BCD:inst.A[7]
+TENS[6] <= BCD2SEG:inst2.SSD[6]
+TENS[5] <= BCD2SEG:inst2.SSD[5]
+TENS[4] <= BCD2SEG:inst2.SSD[4]
+TENS[3] <= BCD2SEG:inst2.SSD[3]
+TENS[2] <= BCD2SEG:inst2.SSD[2]
+TENS[1] <= BCD2SEG:inst2.SSD[1]
+TENS[0] <= BCD2SEG:inst2.SSD[0]
+
+
+|Vending_Machine|BIN2SEG:fiyat|BCD2SEG:inst1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN0
+X[0] => SSD.IN0
+X[0] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[2] => SSD.IN0
+X[2] => SSD.IN0
+X[2] => SSD.IN0
+X[2] => SSD.IN1
+X[3] => SSD.IN1
+X[3] => SSD.IN1
+X[3] => SSD.IN1
+SSD[6] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[5] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[4] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[3] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[2] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[1] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[0] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:fiyat|BIN2BCD:inst
+A[0] => ONES[0].DATAIN
+A[1] => d5[0].IN1
+A[2] => d4[0].IN1
+A[3] => d3[0].IN1
+A[4] => d2[0].IN1
+A[5] => d1[0].IN1
+A[6] => d1[1].IN1
+A[7] => d1[2].IN1
+ONES[0] <= A[0].DB_MAX_OUTPUT_PORT_TYPE
+ONES[1] <= add3:m5.port1
+ONES[2] <= add3:m5.port1
+ONES[3] <= add3:m5.port1
+TENS[0] <= add3:m5.port1
+TENS[1] <= add3:m7.port1
+TENS[2] <= add3:m7.port1
+TENS[3] <= add3:m7.port1
+HUNDREDS[0] <= add3:m7.port1
+HUNDREDS[1] <= add3:m6.port1
+
+
+|Vending_Machine|BIN2SEG:fiyat|BIN2BCD:inst|add3:m1
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:fiyat|BIN2BCD:inst|add3:m2
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:fiyat|BIN2BCD:inst|add3:m3
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:fiyat|BIN2BCD:inst|add3:m4
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:fiyat|BIN2BCD:inst|add3:m5
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:fiyat|BIN2BCD:inst|add3:m6
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:fiyat|BIN2BCD:inst|add3:m7
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|BIN2SEG:fiyat|BCD2SEG:inst2
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+P => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN1
+X[0] => SSD.IN0
+X[0] => SSD.IN0
+X[0] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[1] => SSD.IN1
+X[2] => SSD.IN0
+X[2] => SSD.IN0
+X[2] => SSD.IN0
+X[2] => SSD.IN1
+X[3] => SSD.IN1
+X[3] => SSD.IN1
+X[3] => SSD.IN1
+SSD[6] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[5] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[4] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[3] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[2] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[1] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+SSD[0] <= SSD.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vending_Machine|DEMUX41:inst
+out0 <= and20.DB_MAX_OUTPUT_PORT_TYPE
+input0 => and20.IN0
+input0 => and19.IN0
+input0 => and18.IN0
+input0 => and17.IN0
+select1 => inst6.IN0
+select1 => and18.IN1
+select1 => and17.IN1
+select0 => inst7.IN0
+select0 => and19.IN2
+select0 => and17.IN2
+out1 <= and19.DB_MAX_OUTPUT_PORT_TYPE
+out2 <= and18.DB_MAX_OUTPUT_PORT_TYPE
+out3 <= and17.DB_MAX_OUTPUT_PORT_TYPE
+
+
