@@ -181,6 +181,7 @@ endmodule
 ## Money Input Controller
 
 - It detects if the money input is given and sends a signal to BIN2SEGmodule of the 7-Segment Display that is programmed to show the amount of money you gave.
+
 ![](readme_assets/CoinInputControl.png)
 
 ## FullSubstractor
